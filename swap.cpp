@@ -2,8 +2,9 @@
 using namespace std;
 
 class N1{
-public:
+private:
 int n;
+public:
 N1(int num)
 {
 n = num;
@@ -13,13 +14,15 @@ void disp(){
 cout << n<<endl;
 }
 
-//friend class temp;
+friend void swap();
 };
 
 class N2{
-public:
+private:
 int n;
 
+
+public:
 N2(int num)
 {
 n = num;
@@ -30,7 +33,7 @@ void disp()
 cout << n << endl;
 }
 
-//friend class temp;
+friend void swap();
 };
 
 void swap(int *n1,int *n2){
@@ -50,7 +53,7 @@ cout<<"\nThe value stored in obj1 is :";
 obj1.disp();
 cout<<"\n enter the value for second obj:";
 cin>> n;
-N2 obj2 = N2(n); 
+N2 obj2 = N2(n);
 cout<<"\n The value stored in second obj is :";
 obj2.disp();
 
@@ -59,7 +62,7 @@ swap(&obj1.n, &obj2.n);
 
 cout<<"\nThe value stored in obj1 is :";
 obj1.disp();
- 
+
 cout<<"\n The value stored in second obj is :";
 obj2.disp();
 
